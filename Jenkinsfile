@@ -5,10 +5,10 @@ pipeline {
     //     DOTNET_ROOT = '/usr/share/dotnet'  // adjust if needed
     // }
 
-    tools {
+    // tools {
         // Only necessary if you're managing .NET SDK via Jenkins tools
         // dotnetsdk 'dotnet-8.0'
-    }
+    // }
 
     stages {
         stage('Restore') {
