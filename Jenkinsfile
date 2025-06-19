@@ -11,24 +11,21 @@ pipeline {
     // }
 
     stages {
-        stage('Restore') {
+        stage('Checkout the repository') {
             steps {
-                echo 'Restoring NuGet packages...'
-                sh 'dotnet restore'
+                checkout scm
             }
         }
 
-        stage('Build') {
+        stage('Build the project') {
             steps {
-                echo 'Building the project...'
-                sh 'dotnet build --no-restore'
+                sh 'dotnet build'
             }
         }
 
-        stage('Test') {
+        stage('Run tests') {
             steps {
-                echo 'Running tests...'
-                sh 'dotnet test --no-build --verbosity normal'
+                sh 'dotnet test'
             }
         }
     }
